@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>常用函数</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{font-family: '微软雅黑','sans-serif';}
+</style>
+</head>
+<body>
+<H3>转换函数</H3>
+<UL>
+<LI><FONT color=#0000ff>nvl(expr1, expr2)</FONT>——若expr1为NULL，返回expr2；expr1不为NULL，返回expr1（注意两者的类型要一致）
+<LI><FONT color=#0000ff>to_date('19921223','yyyymmdd')</FONT>——将字符串X转化为日期型
+</LI>
+</UL>
+<H3>聚组函数（all对所有的值求值，distinct只对不同的值求值，默认为all）</H3>
+<UL>
+<LI><FONT color=#0000ff>max([distinct|all] x)</FONT> ——统计数据表选中行x列的最大值（x可为数字、字符或日期型字段）
+<LI><FONT color=#0000ff>min([distinct|all] x)</FONT>——统计数据表选中行x列的最大值（x可为数字、字符或日期型字段；字符型字段将忽略空值）
+<LI><FONT color=#0000ff>avg([distinct|all] x)</FONT>——统计数据表选中行x列的平均值（x只能为数值型字段）
+<LI><FONT color=#0000ff>count(*|[distinct|all]x)</FONT>——统计数据表选中行x列的合计值（x可为数字、字符、日期型及其它类型的字段；*表示对满足条件的所有行统计，不管其是否重复或有空值，count(*)=sum(1)）
+<LI><FONT color=#0000ff>sum([distinct|all]x)</FONT>——统计数据表选中行x列的合计值（x只能为数值型字段）
+</LI>
+</UL>
+</body>
+</html>

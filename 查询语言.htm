@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>查询语言</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{font-family: '微软雅黑','sans-serif';}
+</style>
+</head>
+<body>
+<H3>查询关键字</H3>
+<UL>
+<LI><FONT color=#0000ff>select</FONT>——表示这是一个查询语句
+<LI><FONT color=#0000ff>distinct</FONT>——表示去除重复数据
+<LI><FONT color=#0000ff>*</FONT> ——表示查询整条记录 （单写一个或几个字段表示只需要查询这几个字段的值）
+<LI><FONT color=#0000ff>from</FONT>——后面跟要查询的表名
+<LI><FONT color=#0000ff>where</FONT>——后面跟查询的条件
+<LI><FONT color=#0000ff>group by</FONT>——查出来的数据按照某字段分组
+<LI><FONT color=#0000ff>having</FONT>——表示过滤
+<LI><FONT color=#0000ff>order by</FONT>——表示按照某字段的值来排序 
+<LI><FONT color=#0000ff>asc/desc</FONT>——asc表示升序（默认的），desc表示降序
+<LI><FONT color=#0000ff>||</FONT>——连接查出来的值的字符
+<LI><FONT color=#0000ff>like</FONT>——用于模糊查询，后面跟模糊匹配表达式
+<LI><FONT color=#0000ff>% </FONT>——用于模糊查询，表示0个或者多个任意字符
+<LI><FONT color=#0000ff>_ </FONT>——用于模糊查询，表示任意单个字符
+<LI><FONT color=#0000ff>字段 in(值1, 值2, 值3)</FONT>——表示该字段值在值1，值2或值3之中
+<LI><FONT color=#0000ff>字段 is null</FONT>——表示该字段不为空
+<LI><FONT color=#0000ff>+ </FONT>——放在没有匹配行的表后，使表的记录完全显示
+</LI>
+</UL>
+<H3>子查询</H3>
+<UL>
+<LI>子查询是指嵌入在其它sql语句中的select语句，也叫嵌套查询
+<LI><STRONG>单行子查询</STRONG>：单行子查询是指只返回一行数据的子查询
+<LI><STRONG>多行子查询</STRONG>：多行子查询指返回多行数据的子查询
+<LI>例1、如何显示与SMITH同一部门的所有员工<BR>
+<FONT color=#0000ff>select * from emp where deptno=(select deptno from emp where ename='SMITH');</FONT><BR>
+例2、如何查询和部门10的工作相同的雇员的名字、岗位、工资、部门号<BR>
+<FONT color=#0000ff>select ename,job,sal,deptno from emp where job in (select job from emp where deptno=10);</FONT>
+<LI><FONT color=#0000ff>all</FONT>——比较所有的；<FONT color=#0000ff>any</FONT>——和其中的一个比较
+<LI><FONT color=#0000ff>rownum</FONT>——它是一个伪列，它不是在表建立成功的时候自动生成，而是在对一张表进了查询得到结果后才生成的<BR>
+这就是为什么我们如果用rownum对结果进行分页查询的时候我们可以查&lt;10的结果，却不能得到&gt;3&amp;&lt;10的结果<BR>
+<IMG alt="" src="images/note2-1.png">
+</LI>
+</UL>
+<H3>总结</H3>
+<LI>在Oracle数据库中如果要对日期类型的值进行比较，不能直接比较需要把输入的值转换成日期型
+<LI>聚组函数只能跟在select, having, order by后
+<LI>如果在select语句中同时出现了group by，having和order by顺序必须是先group by再having最后order by
+<LI>如果在选择列中有列，表达式，和聚组函数，这些列和表达式必须有一个出现在group by子句中
+<LI>having是用于合计计算的运算符，当使用group 
+by时having是对各组中的记录进行比较的意思，也就是选择一组数据的条件，而where则是选择一行数据的条件，和分组无关</LI> 
+</body>
+</html>

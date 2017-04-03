@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>远程访问数据库</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{font-family: '微软雅黑','sans-serif';}
+</style>
+</head>
+<body>
+<H3>修改listener.ora文件</H3>
+<UL>
+<LI>监听器服务启动的时候也会读取..\product\11.2.0\dbhome_1\NETWORK\ADMIN\listener.ora文件，其内容如下：<BR>
+<IMG alt="" src="images/note3-15.png"><BR>
+<LI><FONT color=#ff0000>PROTOCOL</FONT>——通讯协议：TCP/IPC
+<LI><FONT color=#ff0000>HOST</FONT>——主机名，可以是127.0.0.1/localhost（本地连接）或是机器名/IP（远程访问）
+<LI><FONT color=#ff0000>PORT</FONT>——端口，默认是1521
+<LI>注：listener.ora文件修改后要重新启动监听器服务才能生效
+</LI>
+</UL>
+<H3>修改tnsnames.ora文件</H3>
+<UL>
+<LI>使用Net Configuration Assistant配置的SQLNET连接字符串会保存在..\product\11.2.0\dbhome_1\NETWORK\ADMIN\tnsnames.ora文件，其内容如下：<BR>
+<IMG alt="" src="images/note3-16.png"><BR>
+<LI><FONT color=#ff0000>PROTOCOL</FONT>——通讯协议：TCP/IPC
+<LI><FONT color=#ff0000>HOST</FONT>——主机名，可以是127.0.0.1/localhost（本地连接）或是机器名/IP（远程访问）
+<LI><FONT color=#ff0000>PORT</FONT>——端口，默认是1521
+<LI><FONT color=#ff0000>SERVICE_NAME</FONT>——服务名
+<LI>注：tnsnames.ora文件修改后要重新启动数据库实例服务才能生效
+</LI>
+</UL>
+<H3>远程访问命令</H3>
+<UL>
+<LI><FONT color=#ff0000>conn sys/manager@SERVICE_NAME</FONT></LI>
+</UL>
+</body>
+</html>

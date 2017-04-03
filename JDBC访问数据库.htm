@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>JDBC访问数据库</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{font-family: '微软雅黑','sans-serif';}
+</style>
+</head>
+<body>
+<H3>JDBC连接Oracle有2种方式：thin(服务器端)/oci(客户端)</H3>
+<UL>
+<LI>在路径..\product\11.2.0\dbhome_1\jdbc\lib下找到含有JDBC的驱动类ojdbc5.jar(适用于JDK5)或ojdbc6.jar(适用于JDK6)<BR><BR>
+<LI><H4>thin方式连接字符串：<FONT color=#0000ff>jdbc:oracle:thin:@//localhost:1521/orcl</FONT></H4>
+<FONT color=#0000ff>localhost</FONT>——安装有Oracle数据库的服务器的机器名或IP地址<BR>
+<FONT color=#0000ff>1521</FONT>——端口号<BR>
+<FONT color=#0000ff>orcl</FONT>——安装的Oracle实例名<BR><BR>
+<LI><H4>oci方式连接字符串：jdbc:oracle:oci@orcl</FONT></H4>
+<FONT color=#0000ff>localhost</FONT>——安装有Oracle数据库的服务器的机器名或IP地址<BR>
+<FONT color=#0000ff>orcl</FONT>——sqlnet连接字符串，它在tnsnames.ora中定义<BR><BR>
+</LI>
+</UL>
+</body>
+</html>

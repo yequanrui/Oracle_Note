@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>约束</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{font-family: '微软雅黑','sans-serif';}
+</style>
+</head>
+<body>
+<H4>表中的约束用于维护数据的完整性和一致性，它既可以在建表时施加，也可以建表后添加</H4>
+<UL>
+<LI><FONT color=#0000ff>主键(primary key)</FONT><BR>
+用于唯一标示表行的数据，当定义主键约束后，该列不能重复且不能为null<BR>
+一张表最多只能有一个主键，但是可以有多个unique约束<BR><BR>
+<LI><FONT color=#0000ff>非空(not null)</FONT><BR><BR>
+<LI><FONT color=#0000ff>唯一性(unique)</FONT><BR>
+数据不能重复但是可以有很多个null，也可以有很多个空字符串<BR><BR>
+<LI><FONT color=#0000ff>检查(check)</FONT><BR><BR>
+<LI><FONT color=#0000ff>缺省(default)</FONT><BR><BR>
+<LI><FONT color=#0000ff>外键(foreign key)</FONT><BR>
+用于定义主表和从表之间的关系，外键约束要定义在从表上，主表则必须具有主键约束或是unique约束<BR>
+当外键约束定义后，要求外键列数据必须在主表的主键列存在或是为null
+</LI>
+</UL>
+</body>
+</html>

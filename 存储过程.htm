@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>存储过程</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{font-family: '微软雅黑','sans-serif';}
+</style>
+</head>
+<body>
+<H4>存储过程没有返回值</H4>
+<UL>
+<LI>建立存储过程的命名格式如下：<BR>
+<FONT color=#0000ff>
+create or replace procedure [函数名称] [as|is]<BR>
+--变量声明<BR>
+begin<BR>
+--执行语句<BR>
+exception<BR>
+--异常处理<BR>
+end;<BR><BR>
+</FONT>
+<LI>调用存储过程可以使用SQL语句<BR>
+<FONT color=#0000ff>
+execute [存储过程名];<BR><BR>
+</FONT>
+<LI>执行函数也可以使用匿名的PL/SQL块<BR>
+<FONT color=#0000ff>
+begin<BR>
+&nbsp;[存储过程名];<BR>
+end;<BR><BR>
+</FONT>
+<LI>存储过程可以带输入参数和输出参数，输入参数时默认的或使用in关键字标示，输出参数使用out关键字标示<BR><BR>
+<LI>调用导游输出参数的存储过程时需要使用PL/SQL块，调用存储过程时可以使用位置调用法，也可以使用参数名称赋值调用法<BR><BR>
+<LI>在JDBC中调用存储过程，使用CallableStatemnent对象
+</LI>
+</UL>
+</body>
+</html>

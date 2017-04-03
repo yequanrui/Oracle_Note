@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>常用命令</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{font-family: '微软雅黑','sans-serif';}
+</style>
+</head>
+<body>
+<H3>连接命令</H3>
+<UL>
+<LI><FONT color=#0000ff>quit;或exit;</FONT>——断开数据库连接并退出sqlplus环境
+<LI><FONT color=#0000ff>disc;</FONT>——断开数据库连接但不退出sqlplus
+<LI><FONT color=#0000ff>conn 用户名/密码;</FONT> ——连接用户（管理员用户sys连接的时候需要在后面添加as sysdba或者as sysoper）
+</LI>
+</UL>
+<H3>交互式命令</H3>
+<UL>
+<LI><FONT color=#0000ff>show user;</FONT>——显示当前登录用户
+<LI><FONT color=#0000ff>show errors;</FONT>——显示代码中的错误
+<LI><FONT color=#0000ff>clear screen;</FONT>——清除屏幕
+<LI><FONT color=#0000ff>edit 路径;</FONT>——编辑指定路径的sql脚本
+<LI><FONT color=#0000ff>spool 路径;—&gt;sql语句运行结果—&gt;spool off;</FONT> ——可以将两个spool之间的内容输出到指定路径的文件中
+<LI><FONT color=#0000ff>alter user 用户名 account unlock;</FONT>——解锁用户（解锁用户必须是管理员用户）
+<LI><FONT color=#0000ff>create user 用户名 identified by 密码;</FONT>——创建用户命令（创建用户必须是管理员用户，密码不能以数字开头）
+<LI><FONT color=#0000ff>alter user 用户名 identified by 密码;</FONT>——修改用户密码命令（修改用户密码既可以是管理员用户，也可以是本用户）
+<LI><FONT color=#0000ff>grant connect to 用户名;</FONT>——授予用户连接权限（新建的用户是没有任何权限的，必须通过管理员用户授权才能有权限）
+<LI><FONT color=#0000ff>grant resource to 用户名;</FONT>——授予用户控制资源权限（oracle对象、表、簇、序列、过程、视图、plsql块、触发器）的权限
+<LI><FONT color=#0000ff>grant all on 方案名.数据库对象 to 用户名;</FONT>——分享权限（如果想把得到的权限再分享出去就需要一开始授权的时候在后面加上with grant option）
+<LI><FONT color=#0000ff>revoke all on 方案名.数据对象 from 用户名;</FONT>——回收用户权限
+<LI><FONT color=#0000ff>drop user 用户名;</FONT>——删除用户（删除用户必须是管理员用户，删除有对象的用户就要在最后加上cascade）</LI>
+<LI><FONT color=#0000ff>select * from emp where job='&amp;job';</FONT>——表示查出emp表中job字段为用户输入值的所有记录<BR>
+<FONT color=#0000ff>select</FONT>——在sql语句中表示的是查询<BR>
+<FONT color=#0000ff>*</FONT>——表示所有的记录<BR>
+<FONT color=#0000ff>emp</FONT>——表示查询的是emp表<BR>
+<FONT color=#0000ff>where</FONT>——根据什么条件来查询<BR>
+<FONT color=#0000ff>&amp;</FONT>——表示可以替代变量，而该变量在执行时，需要用户输入
+<FONT color=#0000ff>set serverout on;</FONT>——打开服务器端输出 ，dbms_output.put_line()的输出内容可以显示
+</UL>
+<H3>表命令</H3>
+<UL>
+<LI><FONT color=#0000ff>desc 表名;</FONT>——显示表结构
+<LI><FONT color=#0000ff>column 列名 fornat 格式;</FONT>——设置一行显示的字符数
+<LI><FONT color=#0000ff>set pagesize 行数;</FONT>——设置一页显示的行数
+<LI><FONT color=#0000ff>set pagesize 行数;</FONT>——设置一页显示的行数
+<LI><FONT color=#0000ff>create table 表名(字段1 数据类型1, 字段2 数据类型2……);</FONT>——创建表
+<LI><FONT color=#0000ff>alter table 表名 add(要添加的字段 数据类型);</FONT>——添加列
+<LI><FONT color=#0000ff>alter table 表名 modify(需要修改的列 数据类型);</FONT> ——修改列
+<LI><FONT color=#0000ff>alter table 表名 drop(需要删除的字段);</FONT>——删除列
+<LI><FONT color=#0000ff>rename 原表名 to 新表名;</FONT>——修改表名
+<LI><FONT color=#0000ff>insert into 表名(要插入的字段, ……) values(字段的值, ……);</FONT>——将数据插入到表指定字段中
+<LI><FONT color=#0000ff>insert into 表名 values(字段1的值, 字段2的值);</FONT>——将数据插入到表全部字段中
+<LI><FONT color=#0000ff>update 表名 set 需要修改的字段='新的值' where 条件;</FONT>——修改表中的数据
+<LI><FONT color=#0000ff>delete 表名;</FONT>——删除表中的所有记录，但是保留表结构
+<LI><FONT color=#0000ff>drop table 表名;</FONT>——删除表中的所有记录和表结构
+<LI><FONT color=#0000ff>delete 表名 where 条件;</FONT>——删除表中满足条件的数据
+<LI><FONT color=#0000ff>truncate table 表名;</FONT>——删除表中的所有记录，表结构还在，不写日志，无法找回删除的记录，速度快
+</LI>
+</UL>
+</body>
+</html>
