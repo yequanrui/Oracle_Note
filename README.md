@@ -1,2 +1,2 @@
 # Oracle_Note
-Oracle Note made by WinCHM 
+The notes made by WinCHM when I learn the oracle
